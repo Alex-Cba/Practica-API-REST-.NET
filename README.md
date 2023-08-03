@@ -14,5 +14,5 @@
 
 - El proyecto puede sufrir cambios, ya que estoy en constante aprendizaje y va a ser mejorado con los conocimientos que adquiera. 
 
- Aclaraciones: La migración no existe, asi que ustedes puede crear la migración si lo desea,
+ Aclaraciones: La migración no existe, asi que ustedes pueden crear la migración si lo desea,
 		para ello debe configurar la DefaultConnection en el archivo appsettings.json del proyecto.
