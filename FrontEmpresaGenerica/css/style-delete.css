@@ -1,0 +1,29 @@
+.form-group{
+    margin: 1.5rem;
+}
+
+#miFormulario {
+    margin-top: 2.5rem;
+    padding: 2%;
+    height: 25%;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    border-radius: 35px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+.error {
+    color: red;
+    font-size: large;
+    font-weight: 900;
+    font-family: 'Times New Roman', Times, serif
+}
+
+#jefe-error{
+    color: blue;
+    font-size: large;
+    font-weight: 900;
+    font-family: 'Times New Roman', Times, serif
+}
