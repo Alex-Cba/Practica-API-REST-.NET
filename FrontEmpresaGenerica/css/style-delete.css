@@ -1,8 +1,12 @@
+.body, *{
+    box-sizing: border-box;
+}
+
 .form-group{
     margin: 1.5rem;
 }
 
-#miFormulario {
+#tabla-borde {
     margin-top: 2.5rem;
     padding: 2%;
     height: 25%;
@@ -12,6 +16,28 @@
     border-radius: 35px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
     overflow: hidden;
+}
+
+.tabla-desktop{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-desktop tr th{
+    background-color: rgb(206, 46, 46);
+    color: white;
+    border:  1px solid #901a1a;
+    padding: 5px;
+    text-align: left;
+}
+
+.tabla-desktop tr td{
+    border:  1px solid #901a1a;
+    padding: 5px;
+}
+
+.tabla-desktop tr:nth-of-type(odd){
+    background-color:  #e6e6e6;
 }
 
 .error {
@@ -26,4 +52,50 @@
     font-size: large;
     font-weight: 900;
     font-family: 'Times New Roman', Times, serif
+}
+
+/*---Tabla para celular---*/
+.tabla-celular{
+    display: none;
+    width: 100%;
+}
+
+.tabla-mobile .fila .columna{
+    display: flex;
+}
+
+.tabla-mobile .fila .columna .header,
+ .tabla-mobile .fila .columna .contenido{
+    border:  1px solid #901a1a;
+    border-bottom: none;
+    padding: 10px;
+}
+
+.tabla-mobile .fila .columna .header{
+    width: 40%;
+    background-color: rgb(206, 46, 46);
+    color: white;
+    font-weight: bold;
+}
+
+.tabla-mobile .fila .columna .contenido{
+    width: 60%;
+}
+
+.tabla-mobile .fila:nth-of-type(even) .columna .contenido{
+    background-color: #e6e6e6;
+}
+
+.tabla-mobile .fila .columna:last-of-type .contenido, .header{
+    border-bottom: 1px solid #901a1a;
+}
+
+@media (max-width: 992px){
+    .tabla-celular{
+        display: block;
+    }
+
+    .tabla-pc{
+        display: none;
+    }
 }

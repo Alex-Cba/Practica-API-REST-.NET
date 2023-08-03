@@ -36,14 +36,12 @@
         </div>
     </nav>
     <main>
-        <section>
-            <br>
-            <br>
-            <div class="container">
+        <section class="tabla-pc">
+            <div id="tabla-borde" class="container">
                 <div class="container mt-3"></div>
                 <div class="container mt-6">
                     <h2>Lista de Empleados</h2>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered tabla-desktop">
                         <thead>
                             <tr>
                                 <th>Id</th>
@@ -59,6 +57,55 @@
                         <tbody id="empleadosTableBody">
                         </tbody>
                     </table>
+                </div>
+                <div class="container mt-3"></div>
+            </div>
+        </section>
+    </main>
+
+    <main>
+        <section class="tabla-celular">
+            <div id="tabla-borde" class="container">
+                <div class="container mt-3"></div>
+                <div class="container mt-6">
+                    <h2>Lista de Empleados</h2>
+                    <div class="tabla-mobile" id="empleadosTablaMobile">
+                        <div class="fila">
+                            <div class="columna">
+                                <div class="header">Id</div>
+                                <div class="contenido">prueba</div>
+                            </div>
+                            <div class="columna">
+                                <div class="header">Nombre</div>
+                                <div class="contenido">prueba</div>
+                            </div>
+                            <div class="columna">
+                                <div class="header">Apellido</div>
+                                <div class="contenido">prueba</div>
+                            </div>
+                            <div class="columna">
+                                <div class="header">DNI</div>
+                                <div class="contenido">prueba</div>
+                            </div>
+                            <div class="columna">
+                                <div class="header">Fecha ded Alta</div>
+                                <div class="contenido">prueba</div>
+                            </div>
+                            <div class="columna">
+                                <div class="header">Sucursal</div>
+                                <div class="contenido">prueba</div>
+                            </div>
+                            <div class="columna">
+                                <div class="header">Cargo
+                                </div>
+                                <div class="contenido">prueba</div>
+                            </div>
+                            <div class="columna">
+                                <div class="header">Eliminar</div>
+                                <div class="contenido">prueba</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="container mt-3"></div>
             </div>
@@ -93,9 +140,11 @@
                             tr.append('<td>' + empleado.fechaAlta + '</td>');
                             tr.append('<td>' + empleado.sucursal.nombre + '</td>');
                             tr.append('<td>' + empleado.cargo.nombre + '</td>');
-                            tr.append('<td><button class="btn btn-danger" onclick="eliminarEmpleado(\'' + empleado.id + '\')">X</button></td>');
+                            tr.append('<td><div class="d-flex justify-content-center"><button class="btn btn-danger" onclick="eliminarEmpleado(\'' + empleado.id + '\')">X</button></div></td>');
 
                             empleadosTableBody.append(tr);
+
+                            cargarEmpleadosTablaMobile(data.listaEmpleados); //para celulares
                         });
                     } else {
                         alert('Error al obtener la lista de empleados: ' + data.messageError);
@@ -130,7 +179,7 @@
                             Swal.fire({
                                 icon: "error",
                                 title: "Hubo un error!",
-                                text: "Hubo un error al eliminar un empleado. Error: " + respuesta.messageError
+                                text: "Hubo un error al eliminar un empleado. Error: " + data.messageError
                             });
                         }
                     },
@@ -144,6 +193,63 @@
                 });
             }
         }
+
+        function generarContenidoCelular(empleado) {
+            var contenidoCelular = `
+            <div class="fila">
+                <div class="columna">
+                    <div class="header">Id</div>
+                    <div class="contenido">${empleado.id}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Nombre</div>
+                    <div class="contenido">${empleado.nombre}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Apellido</div>
+                    <div class="contenido">${empleado.apellido}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">DNI</div>
+                    <div class="contenido">${empleado.dni}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Fecha de Alta</div>
+                    <div class="contenido">${empleado.fechaAlta}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Sucursal</div>
+                    <div class="contenido">${empleado.sucursal.nombre}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Cargo</div>
+                    <div class="contenido">${empleado.cargo.nombre}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Eliminar</div>
+                    <div class="contenido d-flex justify-content-center">
+                        <button class="btn btn-danger" onclick="eliminarEmpleado('${empleado.id}')">X</button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+            return contenidoCelular;
+        }
+
+        function cargarEmpleadosTablaMobile(empleados) {
+            var empleadosTablaMobile = $('#empleadosTablaMobile');
+            empleadosTablaMobile.empty();
+
+            empleados.forEach(function (empleado) {
+                var contenidoCelular = generarContenidoCelular(empleado);
+                empleadosTablaMobile.append(contenidoCelular);
+            });
+        }
+
+        $(document).ready(function () {
+            cargarEmpleados();
+        });
 
         cargarEmpleados();
     </script>

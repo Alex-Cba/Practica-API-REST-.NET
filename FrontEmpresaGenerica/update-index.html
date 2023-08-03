@@ -122,7 +122,7 @@
                 },
                 submitHandler: function (form) {
                     actualizarEmpleado();
-                    
+
                 }
             });
 
@@ -142,8 +142,12 @@
                             alert('Error al obtener la lista de cargos: ' + data.messageError);
                         }
                     },
-                    error: function (xhr, status, error) {
-                        alert('Error en la llamada Ajax: ' + error);
+                    error: function () {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Hubo un error!",
+                            text: "Hubo un error al cargar los cargos de los empleados."
+                        });
                     }
                 });
             }
@@ -164,8 +168,12 @@
                             alert('Error al obtener la lista de sucursales: ' + data.messageError);
                         }
                     },
-                    error: function (xhr, status, error) {
-                        alert('Error en la llamada Ajax: ' + error);
+                    error: function () {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Hubo un error!",
+                            text: "Hubo un error al cargar las sucursales."
+                        });
                     }
                 });
             }
@@ -186,8 +194,12 @@
                             alert('Error al obtener la lista de jefes: ' + data.messageError);
                         }
                     },
-                    error: function (xhr, status, error) {
-                        alert('Error en la llamada Ajax: ' + error);
+                    error: function () {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Hubo un error!",
+                            text: "Hubo un error al cargar los empleados que son Jefes de otros empleados."
+                        });
                     }
                 });
             }
