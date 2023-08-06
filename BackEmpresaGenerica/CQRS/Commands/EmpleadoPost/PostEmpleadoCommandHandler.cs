@@ -53,7 +53,6 @@ namespace EmpresaGenericaAPI.CQRS.Commands.EmpleadoPost
                     var empleadoDTO = _mapper.Map<EmpleadoDTO>(ConsultarEmpleado);
 
                     response = _mapper.Map<RespuestaEmpleadoDTO>(empleadoDTO);
-                    //response.CiudadNombre = ConsultarEmpleado.Sucursal.Ciudad.Nombre;
 
                     response.StatusCode = 200;
                     response.MessageError = "Se guardo correctamente el empleado";
