@@ -16,3 +16,6 @@
 
  Aclaraciones: La migración no existe, asi que ustedes pueden crear la migración si lo desea,
 		para ello debe configurar la DefaultConnection en el archivo appsettings.json del proyecto.
+
+
+![API-REST-Full](https://github.com/Gr1ll0/Practica-API-REST-.NET/assets/111154509/639ad4d1-36e8-4aae-9e9e-329ac68e3ea4)
