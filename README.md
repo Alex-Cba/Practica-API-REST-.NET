@@ -8,6 +8,8 @@
 Probar demostración de página en línea: https://empresa-generica.netlify.app/
  - La demostración es completamente funcional, con su front-end, y back-end(Api y base de datos) completamente en línea.
 
+![demo-empresa-generica](https://github.com/Gr1ll0/Practica-API-REST-.NET/assets/111154509/0136a113-8d00-4b59-bdf2-b7f4c2d12dda)
+
  - Se aplicó el patrón CQRS, permitiendo separar las Querys y los Commands.
  - El desarrollo de la base de datos por la técnica de programación CodeFirst, con su base de datos en PostgreSQL
  - Se aplicó el patrón Mediator, con la extensión MediaTR
