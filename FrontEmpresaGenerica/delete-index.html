@@ -13,24 +13,19 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#">Empresa Generica</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Registrar Empleado</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="update-index.html">Actualizar Empleado</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled active" href="delete-index.html">Eliminar Empleado</a>
-                    </li>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Registrar Empleado</a></li>
+                    <li class="nav-item"><a class="nav-link" href="update-index.html">Actualizar Empleado</a></li>
+                    <li class="nav-item"><a class="nav-link disabled active" href="delete-index.html">Eliminar Empleado</a></li>
+                    <li class="nav-item"><a class="nav-link" href="get-index.html">Tabla Empleados</a></li>
                 </ul>
             </div>
         </div>
@@ -69,7 +64,8 @@
                 <div class="container mt-3"></div>
                 <div class="container mt-6">
                     <h2>Lista de Empleados</h2>
-                    <div class="tabla-mobile" id="empleadosTablaMobile"></div>
+                    <div class="tabla-mobile" id="empleadosTablaMobile">
+                    </div>
                 </div>
                 <div class="container mt-3"></div>
             </div>
@@ -87,7 +83,7 @@
     <script>
         function cargarEmpleados() {
             $.ajax({
-                url: 'https://localhost:7137/GetAllEmpleados',
+                url: 'https://GrilloAPI.somee.com/GetAllEmpleados',
                 type: 'GET',
                 dataType: 'json',
                 success: function (data) {
@@ -126,7 +122,7 @@
         function eliminarEmpleado(empleadoId) {
             if (confirm('¿Está seguro de que desea eliminar este empleado?')) {
                 $.ajax({
-                    url: 'https://localhost:7137/DeleteEmpleado?Id=' + empleadoId,
+                    url: 'https://GrilloAPI.somee.com/DeleteEmpleado?Id=' + empleadoId,
                     type: 'DELETE',
                     dataType: 'json',
                     success: function (data) {
@@ -136,7 +132,7 @@
 
                             Swal.fire({
                                 icon: "success",
-                                title: "Empleado: " + data.EmpleadoNombre + ", se ha eliminado exitosamente!",
+                                title: "Empleado: " + data.empleadoNombre + ", se ha eliminado exitosamente!",
                                 text: "Se ha eliminado exitosamente el empleado.",
                             });
                         } else {

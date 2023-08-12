@@ -401,6 +401,10 @@
 }
 
 @media (min-width: 1200px) {
+    .nav-item{
+        font-size: x-small;
+    }
+
     .navbar-expand-xl {
         flex-wrap: nowrap;
         justify-content: flex-start;
@@ -685,7 +689,7 @@
 #mainNav {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: rgb(215, 5, 26);
+    background-color: #01ccf5;
 }
 
 #mainNav .navbar-toggler {
@@ -717,12 +721,13 @@
     letter-spacing: 0.0625em;
 }
 
+
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
     color: rgb(160, 150, 150);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1005px) {
     #mainNav {
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
@@ -791,15 +796,15 @@
 }
 
 .tabla-desktop tr th {
-    background-color: rgb(206, 46, 46);
+    background-color: #09b9dc;
     color: white;
-    border: 1px solid #901a1a;
+    border: 1px solid #1b7e92;
     padding: 5px;
     text-align: left;
 }
 
 .tabla-desktop tr td {
-    border: 1px solid #901a1a;
+    border: 1px solid #1b7e92;
     padding: 5px;
 }
 
@@ -833,14 +838,14 @@
 
 .tabla-mobile .fila .columna .header,
 .tabla-mobile .fila .columna .contenido {
-    border: 1px solid #901a1a;
+    border: 1px solid #1b7e92;
     border-bottom: none;
     padding: 10px;
 }
 
 .tabla-mobile .fila .columna .header {
     width: 40%;
-    background-color: rgb(206, 46, 46);
+    background-color: #09b9dc;
     color: white;
     font-weight: bold;
 }
@@ -855,7 +860,7 @@
 
 .tabla-mobile .fila .columna:last-of-type .contenido,
 .header {
-    border-bottom: 1px solid #901a1a;
+    border-bottom: 1px solid #1b7e92;
 }
 
 @media (max-width: 992px) {

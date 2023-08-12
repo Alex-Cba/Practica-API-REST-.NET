@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Empresa Generica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/style-get.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#">Empresa Generica</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Registrar Empleado</a></li>
+                    <li class="nav-item"><a class="nav-link" href="update-index.html">Actualizar Empleado</a></li>
+                    <li class="nav-item"><a class="nav-link" href="delete-index.html">Eliminar Empleado</a></li>
+                    <li class="nav-item"><a class="nav-link disabled active" href="get-index.html">Tabla Empleados</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Lista Empleados-->
+    <main>
+        <section class="tabla-pc">
+            <div id="tabla-borde" class="container">
+                <div class="container mt-3"></div>
+                <div class="container mt-6">
+                    <h2>Lista de Empleados</h2>
+                    <table class="table table-bordered tabla-desktop">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>DNI</th>
+                                <th>Fecha de Alta</th>
+                                <th>Sucursal</th>
+                                <th>Cargo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="empleadosTableBody">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container mt-3"></div>
+            </div>
+        </section>
+    </main>
+
+    <main>
+        <section class="tabla-celular">
+            <div id="tabla-borde" class="container">
+                <div class="container mt-3"></div>
+                <div class="container mt-6">
+                    <h2>Lista de Empleados</h2>
+                    <div class="tabla-mobile" id="empleadosTablaMobile">
+                    </div>
+                </div>
+                <div class="container mt-3"></div>
+            </div>
+        </section>
+    </main>
+
+    <!--Lista Cargos-->
+    <main>
+        <section class="tabla-pc">
+            <div id="tabla-borde" class="container">
+                <div class="container mt-3"></div>
+                <div class="container mt-6">
+                    <h2>Lista de Cargos</h2>
+                    <table class="table table-bordered tabla-desktop">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cargosTableBody">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container mt-3"></div>
+            </div>
+        </section>
+    </main>
+
+    <main>
+        <section class="tabla-celular">
+            <div id="tabla-borde" class="container">
+                <div class="container mt-3"></div>
+                <div class="container mt-6">
+                    <h2>Lista de Cargos</h2>
+                    <div class="tabla-mobile" id="cargosTableMobile">
+                    </div>
+                </div>
+                <div class="container mt-3"></div>
+            </div>
+        </section>
+    </main>
+
+    <!--Sucursales-->
+    <main>
+        <section class="tabla-pc">
+            <div id="tabla-borde" class="container">
+                <div class="container mt-3"></div>
+                <div class="container mt-6">
+                    <h2>Lista de Sucursales</h2>
+                    <table class="table table-bordered tabla-desktop">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sucursalesTableBody">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container mt-3"></div>
+            </div>
+        </section>
+    </main>
+
+    <main>
+        <section class="tabla-celular">
+            <div id="tabla-borde" class="container">
+                <div class="container mt-3"></div>
+                <div class="container mt-6">
+                    <h2>Lista de Sucursales</h2>
+                    <div class="tabla-mobile" id="sucursalesTableMobile">
+                    </div>
+                </div>
+                <div class="container mt-3"></div>
+            </div>
+        </section>
+    </main>
+
+    <!--Ciudades-->
+    <main>
+        <section class="tabla-pc">
+            <div id="tabla-borde" class="container">
+                <div class="container mt-3"></div>
+                <div class="container mt-6">
+                    <h2>Lista de Ciudades</h2>
+                    <table class="table table-bordered tabla-desktop">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ciudadesTableBody">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container mt-3"></div>
+            </div>
+        </section>
+    </main>
+
+    <main>
+        <section class="tabla-celular">
+            <div id="tabla-borde" class="container">
+                <div class="container mt-3"></div>
+                <div class="container mt-6">
+                    <h2>Lista de Ciudades</h2>
+                    <div class="tabla-mobile" id="ciudadesTableMobile">
+                    </div>
+                </div>
+                <div class="container mt-3"></div>
+            </div>
+        </section>
+    </main>
+
+    <!--Jefes-->
+    <main>
+        <section class="tabla-pc">
+            <div id="tabla-borde" class="container">
+                <div class="container mt-3"></div>
+                <div class="container mt-6">
+                    <h2>Lista de Jefes</h2>
+                    <table class="table table-bordered tabla-desktop">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                            </tr>
+                        </thead>
+                        <tbody id="jefesTableBody">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container mt-3"></div>
+            </div>
+        </section>
+    </main>
+
+    <main>
+        <section class="tabla-celular">
+            <div id="tabla-borde" class="container">
+                <div class="container mt-3"></div>
+                <div class="container mt-6">
+                    <h2>Lista de Jefes</h2>
+                    <div class="tabla-mobile" id="jefesTableMobile">
+                    </div>
+                </div>
+                <div class="container mt-3"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <script>
+        // #region Jefes
+
+        function cargarJefes() {
+            $.ajax({
+                url: 'https://GrilloAPI.somee.com/GetAllJefes',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.isSuccess) {
+                        var jefesTableBody = $('#jefesTableBody');
+                        jefesTableBody.empty();
+
+                        data.listaJefes.forEach(function (jefe) {
+                            var tr = $('<tr>');
+                            tr.append('<td>' + jefe.id + '</td>');
+                            tr.append('<td>' + jefe.nombre + '</td>');
+                            tr.append('<td>' + jefe.apellido + '</td>');
+
+                            jefesTableBody.append(tr);
+
+                            cargarJefesTablaMobile(data.listaJefes); //para celulares
+                        });
+                    } else {
+                        alert('Error al obtener la lista de jefes: ' + data.messageError);
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Hubo un error!",
+                        text: "Hubo un error al cargar los jefes."
+                    });
+                }
+            });
+        }
+
+        function generarContenidoCelularJefe(jefe) {
+            var contenidoCelular = `
+            <div class="fila">
+                <div class="columna">
+                    <div class="header">Id</div>
+                    <div class="contenido">${jefe.id}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Nombre</div>
+                    <div class="contenido">${jefe.nombre}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Apellido</div>
+                    <div class="contenido">${jefe.apellido}</div>
+                </div>
+            </div>
+        `;
+
+            return contenidoCelular;
+        }
+
+        function cargarJefesTablaMobile(jefes) {
+            var jefesTableMobile = $('#jefesTableMobile');
+            jefesTableMobile.empty();
+
+            jefes.forEach(function (jefe) {
+                var contenidoCelular = generarContenidoCelularJefe(jefe);
+                jefesTableMobile.append(contenidoCelular);
+            });
+        }
+        // #endregion
+
+        // #region Ciudad
+
+        function cargarCiudades() {
+            $.ajax({
+                url: 'https://GrilloAPI.somee.com/GetAllCiudades',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.isSuccess) {
+                        var ciudadesTableBody = $('#ciudadesTableBody');
+                        ciudadesTableBody.empty();
+
+                        data.listaCiudades.forEach(function (ciudad) {
+                            var tr = $('<tr>');
+                            tr.append('<td>' + ciudad.id + '</td>');
+                            tr.append('<td>' + ciudad.nombre + '</td>');
+
+                            ciudadesTableBody.append(tr);
+
+                            cargarCiudadesTablaMobile(data.listaCiudades); //para celulares
+                        });
+                    } else {
+                        alert('Error al obtener la lista de ciudades: ' + data.messageError);
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Hubo un error!",
+                        text: "Hubo un error al cargar las ciudades."
+                    });
+                }
+            });
+        }
+
+        function generarContenidoCelularCiudad(ciudad) {
+            var contenidoCelular = `
+            <div class="fila">
+                <div class="columna">
+                    <div class="header">Id</div>
+                    <div class="contenido">${ciudad.id}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Nombre</div>
+                    <div class="contenido">${ciudad.nombre}</div>
+                </div>
+            </div>
+        `;
+
+            return contenidoCelular;
+        }
+
+        function cargarCiudadesTablaMobile(ciudades) {
+            var ciudadesTableMobile = $('#ciudadesTableMobile');
+            ciudadesTableMobile.empty();
+
+            ciudades.forEach(function (ciudad) {
+                var contenidoCelular = generarContenidoCelularCiudad(ciudad);
+                ciudadesTableMobile.append(contenidoCelular);
+            });
+        }
+        // #endregion
+
+        // #region Sucursal
+
+        function cargarSucursales() {
+            $.ajax({
+                url: 'https://GrilloAPI.somee.com/GetAllSucursales',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.isSuccess) {
+                        var sucursalesTableBody = $('#sucursalesTableBody');
+                        sucursalesTableBody.empty();
+
+                        data.listSucursales.forEach(function (sucursal) {
+                            var tr = $('<tr>');
+                            tr.append('<td>' + sucursal.id + '</td>');
+                            tr.append('<td>' + sucursal.nombre + '</td>');
+
+                            sucursalesTableBody.append(tr);
+
+                            cargarSucursalesTablaMobile(data.listSucursales); //para celulares
+                        });
+                    } else {
+                        alert('Error al obtener la lista de sucursales: ' + data.messageError);
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Hubo un error!",
+                        text: "Hubo un error al cargar las sucursales."
+                    });
+                }
+            });
+        }
+
+        function generarContenidoCelularSucursal(sucursal) {
+            var contenidoCelular = `
+            <div class="fila">
+                <div class="columna">
+                    <div class="header">Id</div>
+                    <div class="contenido">${sucursal.id}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Nombre</div>
+                    <div class="contenido">${sucursal.nombre}</div>
+                </div>
+            </div>
+        `;
+
+            return contenidoCelular;
+        }
+
+        function cargarSucursalesTablaMobile(sucursales) {
+            var sucursalesTablaMobile = $('#sucursalesTableMobile');
+            sucursalesTablaMobile.empty();
+
+            sucursales.forEach(function (sucursal) {
+                var contenidoCelular = generarContenidoCelularSucursal(sucursal);
+                sucursalesTablaMobile.append(contenidoCelular);
+            });
+        }
+
+        // #endregion
+
+        // #region Cargo
+
+        function cargarCargos() {
+            $.ajax({
+                url: 'https://GrilloAPI.somee.com/GetAllCargos',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.isSuccess) {
+                        var cargosTableBody = $('#cargosTableBody');
+                        cargosTableBody.empty();
+
+                        data.listaCargos.forEach(function (cargo) {
+                            var tr = $('<tr>');
+                            tr.append('<td>' + cargo.id + '</td>');
+                            tr.append('<td>' + cargo.nombre + '</td>');
+
+                            cargosTableBody.append(tr);
+
+                            cargarCargosTablaMobile(data.listaCargos); //para celulares
+                        });
+                    } else {
+                        alert('Error al obtener la lista de cargos: ' + data.messageError);
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Hubo un error!",
+                        text: "Hubo un error al cargar los cargos."
+                    });
+                }
+            });
+        }
+
+        function generarContenidoCelularCargo(cargo) {
+            var contenidoCelular = `
+            <div class="fila">
+                <div class="columna">
+                    <div class="header">Id</div>
+                    <div class="contenido">${cargo.id}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Nombre</div>
+                    <div class="contenido">${cargo.nombre}</div>
+                </div>
+            </div>
+        `;
+
+            return contenidoCelular;
+        }
+
+        function cargarCargosTablaMobile(cargos) {
+            var cargosTablaMobile = $('#cargosTableMobile');
+            cargosTablaMobile.empty();
+
+            cargos.forEach(function (cargo) {
+                var contenidoCelular = generarContenidoCelularCargo(cargo);
+                cargosTablaMobile.append(contenidoCelular);
+            });
+        }
+
+        // #endregion
+
+        // #region Empleado
+        function cargarEmpleados() {
+            $.ajax({
+                url: 'https://GrilloAPI.somee.com/GetAllEmpleados',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.isSuccess) {
+                        var empleadosTableBody = $('#empleadosTableBody');
+                        empleadosTableBody.empty();
+
+                        data.listaEmpleados.forEach(function (empleado) {
+                            var tr = $('<tr>');
+                            tr.append('<td>' + empleado.id + '</td>');
+                            tr.append('<td>' + empleado.nombre + '</td>');
+                            tr.append('<td>' + empleado.apellido + '</td>');
+                            tr.append('<td>' + empleado.dni + '</td>');
+                            tr.append('<td>' + empleado.fechaAlta + '</td>');
+                            tr.append('<td>' + empleado.sucursal.nombre + '</td>');
+                            tr.append('<td>' + empleado.cargo.nombre + '</td>');
+
+                            empleadosTableBody.append(tr);
+
+                            cargarEmpleadosTablaMobile(data.listaEmpleados); //para celulares
+                        });
+                    } else {
+                        alert('Error al obtener la lista de empleados: ' + data.messageError);
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Hubo un error!",
+                        text: "Hubo un error al cargar los empleados."
+                    });
+                }
+            });
+        }
+
+        function generarContenidoCelular(empleado) {
+            var contenidoCelular = `
+            <div class="fila">
+                <div class="columna">
+                    <div class="header">Id</div>
+                    <div class="contenido">${empleado.id}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Nombre</div>
+                    <div class="contenido">${empleado.nombre}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Apellido</div>
+                    <div class="contenido">${empleado.apellido}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">DNI</div>
+                    <div class="contenido">${empleado.dni}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Fecha de Alta</div>
+                    <div class="contenido">${empleado.fechaAlta}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Sucursal</div>
+                    <div class="contenido">${empleado.sucursal.nombre}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Cargo</div>
+                    <div class="contenido">${empleado.cargo.nombre}</div>
+                </div>
+            </div>
+        `;
+
+            return contenidoCelular;
+        }
+
+        function cargarEmpleadosTablaMobile(empleados) {
+            var empleadosTablaMobile = $('#empleadosTablaMobile');
+            empleadosTablaMobile.empty();
+
+            empleados.forEach(function (empleado) {
+                var contenidoCelular = generarContenidoCelular(empleado);
+                empleadosTablaMobile.append(contenidoCelular);
+            });
+        }
+        // #endregion
+
+        // #region Cargar y Actualizar
+        $(document).ready(function () {
+            cargarEmpleados();
+            cargarCargos();
+            cargarSucursales();
+            cargarCiudades();
+            cargarJefes();
+        });
+
+        cargarEmpleados();
+        cargarCargos();
+        cargarSucursales();
+        cargarCiudades();
+        cargarJefes();
+
+        // #endregion
+    </script>
+</body>
+
+</html>
