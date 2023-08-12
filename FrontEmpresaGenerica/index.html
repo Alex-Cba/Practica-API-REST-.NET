@@ -90,7 +90,7 @@
         $(document).ready(function () {
             function cargarCargos() {
                 $.ajax({
-                    url: 'https://GrilloAPI.somee.com/GetAllCargos',
+                    url: '<El url de tu API>',
                     type: 'GET',
                     dataType: 'json',
                     success: function (data) {
@@ -116,7 +116,7 @@
 
             function cargarSucursales() {
                 $.ajax({
-                    url: 'https://GrilloAPI.somee.com/GetAllSucursales',
+                    url: '<El url de tu API>',
                     type: 'GET',
                     dataType: 'json',
                     success: function (data) {
@@ -142,7 +142,7 @@
 
             function cargarJefes() {
                 $.ajax({
-                    url: 'https://GrilloAPI.somee.com/GetAllJefes',
+                    url: '<El url de tu API>',
                     type: 'GET',
                     dataType: 'json',
                     success: function (data) {
@@ -221,7 +221,7 @@
 
 
             $.ajax({
-                url: "https://GrilloAPI.somee.com/PostEmpleado",
+                url: "<El url de tu API>",
                 type: "POST",
                 contentType: "application/json",
                 data: JSON.stringify(Empleado),

@@ -83,7 +83,7 @@
     <script>
         function cargarEmpleados() {
             $.ajax({
-                url: 'https://GrilloAPI.somee.com/GetAllEmpleados',
+                url: '<El url de tu API>',
                 type: 'GET',
                 dataType: 'json',
                 success: function (data) {
@@ -122,7 +122,7 @@
         function eliminarEmpleado(empleadoId) {
             if (confirm('¿Está seguro de que desea eliminar este empleado?')) {
                 $.ajax({
-                    url: 'https://GrilloAPI.somee.com/DeleteEmpleado?Id=' + empleadoId,
+                    url: '<El url de tu API>?Id=' + empleadoId,
                     type: 'DELETE',
                     dataType: 'json',
                     success: function (data) {

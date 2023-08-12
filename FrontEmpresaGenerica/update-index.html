@@ -123,7 +123,7 @@
 
             function cargarCargos() {
                 $.ajax({
-                    url: 'https://GrilloAPI.somee.com/GetAllCargos',
+                    url: '<El url de tu API>',
                     type: 'GET',
                     dataType: 'json',
                     success: function (data) {
@@ -149,7 +149,7 @@
 
             function cargarSucursales() {
                 $.ajax({
-                    url: 'https://GrilloAPI.somee.com/GetAllSucursales',
+                    url: '<El url de tu API>',
                     type: 'GET',
                     dataType: 'json',
                     success: function (data) {
@@ -175,7 +175,7 @@
 
             function cargarJefes() {
                 $.ajax({
-                    url: 'https://GrilloAPI.somee.com/GetAllJefes',
+                    url: '<El url de tu API>',
                     type: 'GET',
                     dataType: 'json',
                     success: function (data) {
@@ -242,7 +242,7 @@
                 var empleadoId = $(this).val();
 
                 $.ajax({
-                    url: "https://GrilloAPI.somee.com/GetEmpleadoFiltro?Id=" + empleadoId,
+                    url: "<El url de tu API>?Id=" + empleadoId,
                     method: "GET",
                     dataType: "json",
                     success: function (data) {
@@ -291,7 +291,7 @@
 
 
             $.ajax({
-                url: "https://GrilloAPI.somee.com/PutEmpleado",
+                url: "<El url de tu API>",
                 type: "PUT",
                 contentType: "application/json",
                 data: JSON.stringify(Empleado),
