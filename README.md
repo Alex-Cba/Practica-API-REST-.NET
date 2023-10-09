@@ -2,7 +2,7 @@
  Un proyecto el cual es una práctica de desarrollo de APIs en .NET Core
 
  Este proyecto tiene como objetivo simular el desarrollo fullstack de una empresa "X",
- la cual necesita crear, actualizar y eliminar empleados en su base de datos, atrevés de un front-end.
+ la cual necesita crear, actualizar y eliminar empleados en su base de datos, através de un front-end.
 
 
 Probar demostración de página en línea: https://empresa-generica.netlify.app/
